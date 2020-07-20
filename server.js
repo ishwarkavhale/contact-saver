@@ -7,7 +7,7 @@ const app = express();
 connectDB();
 app.get('/', (req, res) => res.send('Hello to code  World!'));
 
-// Middleware function
+// Middleware for accesing contentent from req.body used in users
 
 app.use(express.json({ extended: false }));
 
