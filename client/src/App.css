@@ -226,6 +226,12 @@ img {
   margin-right: 0.2rem;
 }
 
+.btn-md {
+  font-size: 0.9rem;
+  padding: 0.3rem 1rem;
+  margin-right: 0.9rem;
+  margin-top: 1rem;
+}
 .badge {
   display: inline-block;
   font-size: 0.8rem;
