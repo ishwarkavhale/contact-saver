@@ -11,10 +11,10 @@ const router = express.Router();
 
 router.get('/', auth, async (req, res) => {
   try {
-    const coontacts = await Contact.find({ user: req.user.id }).sort({
+    const contacts = await Contact.find({ user: req.user.id }).sort({
       date: -1,
     });
-    res.json(coontacts);
+    res.json(contacts);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -44,9 +44,10 @@ router.post(
         user: req.user.id,
       });
       const contact = await newContact.save();
-      res.json({ contact });
+
+      return res.send(contact);
     } catch (err) {
-      console.error(err.message);
+      console.error(err.msg);
       res.status(500).send('Server Error');
     }
   }
@@ -77,7 +78,7 @@ router.put('/:id', auth, async (req, res) => {
       { $set: contactFields },
       { new: true }
     );
-    res.json({ contact });
+    return res.send(contact);
   } catch (err) {
     console.error(err);
     res.send('Server Error');

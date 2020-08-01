@@ -79,15 +79,14 @@ const ContactForm = () => {
         type="radio"
         name="type"
         value="personal"
-        checked={type === 'personal'}
-        onChange={onChange}
+        defaultChecked={type === 'personal'}
       />{' '}
       Persnol{' '}
       <input
         type="radio"
         name="type"
         value="professional"
-        checked={type === 'professional'}
+        defaultChecked={type === 'professional'}
         onChange={onChange}
       />{' '}
       Professional
@@ -96,11 +95,10 @@ const ContactForm = () => {
           type="submit"
           className="btn btn-primary btn-block"
           value={current ? 'Update Contact' : 'Add Contact'}
-          onClick={onSubmit}
         />
         {current && (
           <div
-            className="text-center btn btn-light btn-block"
+            className="text-center btn btn-light btn-block "
             onClick={clearCurrent}
           >
             Clear
