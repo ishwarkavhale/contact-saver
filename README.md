@@ -1,2 +1,2 @@
-# github-finder
-Find  users profile  on github
+# contact-saver
+saves the contact of users
